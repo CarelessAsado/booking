@@ -13,6 +13,7 @@ import {
 import { FRONTEND_ENDPOINTS } from "config/constants";
 import { login } from "context/userSlice";
 import { useAppDispatch, useAppSelector } from "hooks/reduxDispatchAndSelector";
+import DateRangePicker from "components/calendar/DateRangePicker";
 
 const SuccessRegister = styled(Error)`
   color: green;
@@ -52,8 +53,9 @@ export const Login = () => {
   }
   return (
     <Container>
+      <DateRangePicker />
       <Form onSubmit={handleLogin}>
-        <Header>Login to your account.</Header>
+        <Header>Login to ccount.</Header>
         <Error error={error} aria-live="assertive">
           {error}
         </Error>

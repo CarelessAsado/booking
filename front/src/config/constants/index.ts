@@ -17,6 +17,14 @@ class URL_BACK_ENDPOINTS {
   REFRESH = `${this.ROOT_AUTH}/refresh`;
   LOGOUT = `${this.ROOT_AUTH}/logout`;
   TASKS = `/tasks`;
+  /* -----------------NEW PROJECT----------- */
+  dynGetBookingsAvailability(datesInput: DatesInput) {
+    let query = "";
+    Object.entries(datesInput).forEach(([key, value]) => {
+      query += `${key}=${value}&`;
+    });
+    return `bookings/available?${query}`;
+  }
 }
 export const BACKEND_URL = new URL_BACK_ENDPOINTS();
 
