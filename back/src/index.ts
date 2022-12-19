@@ -27,6 +27,8 @@ connectDB(process.env.MONGODB_URI as string, connectServer);
 /*----------UNPROTECTED ROUTES---------*/
 const authRoutes = require("./routes/auth");
 app.use(BACKEND_ENDPOINTS.ROOT_AUTH, authRoutes);
+const rentalRoutes = require("./rental/rental.routes");
+app.use(BACKEND_ENDPOINTS.ROOT_ROOM, rentalRoutes);
 /*-----------PROTECTED ROUTES--------*/
 /*---MIDDLEWARE-*/
 app.use(verifyToken);

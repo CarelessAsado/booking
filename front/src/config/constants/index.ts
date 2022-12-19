@@ -23,7 +23,7 @@ class URL_BACK_ENDPOINTS {
     Object.entries(datesInput).forEach(([key, value]) => {
       query += `${key}=${value}&`;
     });
-    return `bookings/available?${query}`;
+    return `rooms/available?${query}`;
   }
 }
 export const BACKEND_URL = new URL_BACK_ENDPOINTS();
